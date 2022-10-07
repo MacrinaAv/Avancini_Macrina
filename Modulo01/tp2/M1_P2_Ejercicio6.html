@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 </title>
+    <h2>MODULO 1 - Nivelación y fundamentos de la Programación
+        </br>
+        PRACTICA 2 </br>
+        Ejercicio 6:</h2>
+    <h4>Escribir un script que muestre la posición de la primera vocal de un texto introducido por
+        teclado.Por ejemplo: perro = “e” es la letra Nº2 ; árbol = “a” es la letra Nº1.</h4>
+</head>
+<body>
+    <script>
+       let texto;
+       var i=0;
+       texto=window.prompt();
+        while (texto.charAt(i)!== "a"&& texto.charAt(i)!== "e" && texto.charAt(i)!== "i" && texto.charAt(i)!== "o" && texto.charAt(i)!== "u") {
+            
+            i=i+1;
+        }
+       document.writeln("La letra número " , i+1, " es la primera o unica vocal en la palabra ",texto) 
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <h2>MODULO 1 - Nivelación y fundamentos de la Programación
+        </br>
+        PRACTICA 2 </br>
+        Ejercicio 9:</h2>
+<h4>
+    Crear un programa que recibe las notas de un alumno, todos los números deben ser naturales
+< 11. Debe calcular el promedio. Por último imprimir en pantalla si el valor de media es < 5
+“Reprobado”, entre 6 y 8 “Aprobado” y si es mayor a 8 “Sobresaliente”
+    
+    </h4>
+</head>
+<body>
+    <script>
+        var notas=[];
+        var prom;
+        var  b,n,i,c;
+        c=0;
+       b=0 ;
+        n=parseInt(window.prompt("Ingrese el número de notas "));
+        for ( i= 0; i<=n-1; i++) {
+            c=c+1;
+            a=parseInt(window.prompt("Ingrese la nota número "+c));
+           while (a<1 || a>11) {
+            a=parseInt(window.prompt("Ingrese correctamente la nota número "+c));
+           } 
+           //notas.push(a)
+           
+           b=b+a;
+           
+           //document.writeln(a);
+        }
+        //document.writeln(b);
+
+        prom=b/n;2
+        document.writeln(prom);
+        if (prom<6) {
+            document.writeln("Reprobado");
+        }
+        if (prom>=6 && prom<=8) {
+            document.writeln("Aprobado");
+        }
+        if (prom>8) {
+            document.writeln("Sobresaliente");
+            
+        }
+
+    </script>
+</body>
+</html>

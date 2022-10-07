@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <h2>MODULO 1 - Nivelación y fundamentos de la Programación
+        </br>
+        PRACTICA 2 </br>
+        Ejercicio 3:</h2>
+        <h4>
+            El factorial de un número entero positivo se define como el producto de todos los números
+            naturales anteriores o iguales a él. Es decir que multiplicando todos los factores n x (n-1) x (n-2)
+            x ... x 1. Por ejemplo: el factorial de 5 (escrito como 5!) es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120 </br>
+            Utilizando la estructura FOR, crear un script que pueda calcular el factorial de un número
+            entero. </h4>
+        </h4>
+</head>
+<body>
+    <script>
+        var n;factorial=1;
+        n=window.prompt('Recibira el factorial de...');
+        document.writeln(n,"!=")
+        for (i=1;i<=n;i++){
+            factorial=factorial*i;
+            if (i!=n) {
+                document.writeln(i,"x")
+            }
+        }
+        document.writeln(n,"=",factorial);
+    </script>
+</body>
+</html>

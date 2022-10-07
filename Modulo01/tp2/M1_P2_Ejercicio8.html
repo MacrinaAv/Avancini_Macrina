@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <h2>MODULO 1 - Nivelación y fundamentos de la Programación
+        </br>
+        PRACTICA 2 </br>
+        Ejercicio 8:</h2>
+<h4>
+    Crea una función que genere 100 números aleatorios entre 1 y 100 que no se repitan y luego
+    imprima por pantalla usando document.write(text).
+    
+    </h4>
+</head>
+
+<body>
+<script>
+    
+    function aleatorio(min,max) {
+        a=Math.floor(Math.random()*((max-min)+1));
+        a=a+min
+        return a; 
+    }
+    var numeros=[];
+    var a,n,max,min,i,e;
+    min=1;//valor minimo del rango
+    max=10;//valor máximo del rango
+    i=0;
+    n=window.prompt("Ingrese la cantidad de valores aleatorios que desea resibir en el rango del 1 al 100");
+    
+    var b;
+   do {
+        b=0;
+        numeros=[]
+        for (i = 1; i <=n; i++) {
+            numeros.push(aleatorio(min,max));
+        }
+         //document.writeln(numeros);// permite saber si recorre 
+        for (i = 0; i <=n; i++) {
+            for (e = i+1; e <=n-1; e++) {
+                if (numeros[i]==numeros[e]) {
+                    b=1;
+                    //document.writeln("se repite","</br>");// permite saber si recorre 
+                } else {
+                    //document.writeln("no se repite","</br>"); // permite saber si recorre 
+                }
+            
+            }
+        } 
+   } while (b==1);
+   document.write(numeros)
+    //document.writeln(b); //permite saber en que estado esta la bandera b
+</script>
+</body>
+
+</html>

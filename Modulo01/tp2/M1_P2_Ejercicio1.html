@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejercicio 1 </title>
+<h2>MODULO 1 - Nivelación y fundamentos de la Programación
+</br>
+    PRACTICA 2 </br>
+    Ejercicio 1:</h2>
+    <h4>A partir del siguiente array que se proporciona: var valores = [verdadero, false, 2, "hola",
+    "mundo", 3, char];</br>
+    <ol type="1">
+    <li>Determinar cuál de los elementos de texto es mayor, es decir el que contenga más
+    letras.
+    <li>Imprimir los elementos de menor a mayor cantidad de letras.
+    <li>Determinar el resultado de las cuatro operaciones matemáticas realizadas con los dos</br>
+    elementos numéricos.
+</ol></h4>---------</br>
+</head>
+<body>
+<script>
+   var a=2;
+    var valores= ["verdadero", "false", 2, "hola","mundo", 3, "char"];
+    var mayor=0; pos=0; suma=0; mult=1;
+    var numero=[];
+    var texto=[];
+    var div=1;resta=1;
+    for (i = 0; i < valores.length; i++) {
+       if (typeof valores[i]==="string" && mayor<valores[i].length){
+        mayor=valores[i].length;
+        pos=i;
+        }
+        if (typeof valores[i]==="number"){
+            numero.push(valores[i]);
+            div=numero[0];
+            resta=numero[0];
+            suma=suma+valores[i];
+            mult=mult*valores[i];                
+        }
+        if (typeof valores[i]==="string"){
+         texto.push(valores[i]);
+        }
+    }
+    for (i = 1; i < numero.length; i++) {
+        div=div/numero[i];
+        resta=resta-numero[i];
+              
+    }
+    //document.writeln(numero,"</br>");
+    //document.writeln(valores.sort(),"</br>")
+    //document.writeln(texto,"</br>");
+    
+    document.writeln('El elemento de mayor texto es: ', valores[pos],"</br>");
+    document.writeln(texto.sort((a,b) => a.length - b.length),"</br>")
+    document.writeln('La suma es: ' , suma,"</br>");
+    document.writeln('El valor de la resta es: ', resta,"</br>");
+    document.writeln('El valor de la division es: ', div,"</br>");
+    document.writeln('La multiplicación es: ', mult,"</br>");
+    
+</script>
+</body>
+</html>
