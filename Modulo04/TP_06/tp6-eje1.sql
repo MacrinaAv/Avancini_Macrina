@@ -117,8 +117,37 @@ INSERT INTO `elsistema`.`vendedores` (`nombre`, `apellido`, `cuitcuil`, `comisi�
 INSERT INTO `elsistema`.`vendedores` (`nombre`, `apellido`, `cuitcuil`, `comisión`) VALUES ('Marta', 'Herrera', '27-40481736-1', '0.14'); -- 11
 INSERT INTO `elsistema`.`vendedores` (`nombre`, `apellido`, `cuitcuil`, `comisión`) VALUES ('Antonia', 'Carretero', '20-31481370-7', '0.12'); -- 11
 ALTER TABLE elsistema.movimientos ADD id_producto INT UNSIGNED, ADD estado BOOLEAN, ADD tms TIMESTAMP, ADD tipo_movimiento ENUM("ingreso","egreso","pedido"), ADD FOREIGN KEY (id_producto) REFERENCES productos (id); -- 12
-
-
+INSERT INTO `elsistema`.`clientes` (`nombre`, `apellido`, `cuitcuil`, `ciudad`, `categoría`) VALUES ('Aaeón', 'Rivero', '20-4148122-1', 'Garuhape', '100');-- para que funcione el 13
+INSERT INTO `elsistema`.`clientes` (`nombre`, `apellido`, `cuitcuil`, `ciudad`, `categoría`) VALUES ('Adela', 'Salas', '27-42482596-3', 'Capiovi', '200');-- para que funcione el 13
+INSERT INTO `elsistema`.`clientes` (`nombre`, `apellido`, `cuitcuil`, `ciudad`) VALUES ('Adolfo', 'Rubio', '23-37928596-3', 'Posadas');-- para que funcione el 13
+INSERT INTO `elsistema`.`clientes` (`nombre`, `apellido`, `cuitcuil`, `ciudad`, `categoría`) VALUES ('Marcos', 'Loyola', '24-42481327-3', 'Posadas', '200');-- para que funcione el 13
+INSERT INTO `elsistema`.`clientes` (`nombre`, `apellido`, `cuitcuil`, `ciudad`, `categoría`) VALUES ('María', 'Santana', '27-3877152-2', 'Oberá', '200');-- para que funcione el 13
+INSERT INTO `elsistema`.`movimientos` (`cantidad`, `fecha`, `id_cliente`, `id_vendedor`, `id_producto`, `estado`, `tipo_movimiento`) VALUES ('5', '2022-01-25', '1', '2', '2', '1', 'ingreso');-- 13
+INSERT INTO `elsistema`.`movimientos` (`cantidad`, `fecha`, `id_cliente`, `id_vendedor`, `id_producto`, `estado`, `tipo_movimiento`) VALUES ('8', '2022-05-05', '2', '1', '5', '0', 'egreso');-- 13
+INSERT INTO `elsistema`.`movimientos` (`cantidad`, `fecha`, `id_cliente`, `id_vendedor`, `id_producto`, `estado`, `tipo_movimiento`) VALUES ('5', '2021-09-07', '4', '3', '3', '1', 'pedido');-- 13
+INSERT INTO `elsistema`.`movimientos` (`cantidad`, `fecha`, `id_cliente`, `id_vendedor`, `id_producto`, `estado`, `tipo_movimiento`) VALUES ('10', '2022-11-20', '5', '5', '3', '1', 'pedido');-- 13
+INSERT INTO `elsistema`.`movimientos` (`cantidad`, `fecha`, `id_cliente`, `id_vendedor`, `id_producto`, `estado`, `tipo_movimiento`) VALUES ('20', '2022-11-25', '3', '5', '4', '1', 'ingreso');-- 13
+UPDATE `elsistema`.`movimientos` SET `estado` = NULL WHERE (`id` = '1');-- 14
+UPDATE `elsistema`.`movimientos` SET `estado` = NULL WHERE (`id` = '2');-- 14
+ALTER TABLE elsistema.paises MODIFY COLUMN nombre VARCHAR(100);-- permite poner el nombre null
+SELECT p.id, p.nombre ,count(p.nombre) FROM elsistema.paises AS p INNER JOIN elsistema.provincias AS pp ON p.id=pp.id_pais INNER JOIN elsistema.localidades AS l ON pp.id=l.id_provincia GROUP BY p.nombre ;-- muestra el pais en orden de mas localidades
+UPDATE elsistema.paises AS p SET p.nombre=null WHERE  id=1 ; -- elimina el nombre del pais que en este caso es el de mayor cantidad de localidades
+UPDATE elsistema.productos SET stok=(stok+(select m.cantidad FROM elsistema.movimientos AS m WHERE m.id=1)) WHERE elsistema.productos.id=2;-- 15
+UPDATE elsistema.productos SET stok=(stok-(select m.cantidad FROM elsistema.movimientos AS m WHERE m.id=2)) WHERE elsistema.productos.id=5;-- 15
+UPDATE elsistema.productos SET stok=(stok+(select m.cantidad FROM elsistema.movimientos AS m WHERE m.id=3)) WHERE elsistema.productos.id=3;-- 15
+UPDATE elsistema.productos SET stok=(stok+(select m.cantidad FROM elsistema.movimientos AS m WHERE m.id=4)) WHERE elsistema.productos.id=3;-- 15
+UPDATE elsistema.productos SET stok=(stok+(select m.cantidad FROM elsistema.movimientos AS m WHERE m.id=5)) WHERE elsistema.productos.id=4;-- 15
+CREATE TABLE `elsistema`.`parametros` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `tsm` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `cosas` JSON NULL,
+  `id_usuario` INT NULL,
+  PRIMARY KEY (`id`));
+INSERT INTO `elsistema`.`parametros` (`cosas`, `id_usuario`) VALUES ('{\"idDeLaCosa\": \"101\", \"permisos\": \"PUT, GET\"}', '1');
+INSERT INTO `elsistema`.`parametros` (`cosas`, `id_usuario`) VALUES ('{\"vistasPermitidas\":\"menuPrincipal,menuSecundario,ventas,estadisticaVentas,listaCliente\", \"grupo\": \"ventas\"}', '2');
+INSERT INTO `elsistema`.`parametros` (`cosas`, `id_usuario`) VALUES ('{\"zonaHoraria\": \"America/Argentina/BuenosAires\"}','5');
+INSERT INTO `elsistema`.`parametros` (`cosas`, `id_usuario`) VALUES ('{\"fechaInicioActividades\": \"01/01/2019\", \"mesAperturaCaja\": \"Enero\", \"mesCierreCaja\": \"Diciembre\"}','5');
+INSERT INTO `elsistema`.`parametros` (`cosas`, `id_usuario`) VALUES ('{\"balancesAniosAnteriores\": {\"2019\": {\"ingreso\": \"7374901.93\",\"egreso\": \"3732538,75\"},\"2020\":{\"ingreso\": \"27442665,12\",\"egreso\": \"8522331,82\"},\"2021\": {\"ingreso\":\"31634912,57\",\"egreso\": \"9757142,66\"}}}','3');
 
 
 
