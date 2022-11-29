@@ -1,0 +1,12 @@
+{
+  "name": "getNombre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejercicio4.js",
+  "scripts": {
+    "start":"node ejercicio4.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Macrina",
+  "license": "ISC"
+}
