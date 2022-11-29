@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ejercicio3.js",
+  "scripts": {
+    "start":"node ejercicio3.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Macrina",
+  "license": "ISC"
+}
