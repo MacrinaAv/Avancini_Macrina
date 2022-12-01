@@ -1,11 +1,12 @@
-{"contabilidad": 
+{"departamentos":{
+"contabilidad": 
     [
     {"id_empleado":"10",
     "nombre":"Juan Segovia"},
     {"id_empleado":"15",
     "nombre":"Ramiro Romero"}
     ],
-    "tecnología":[
+    "tecnologia":[
     {"id_empleado":"12",
     "nombre":"Pablo Richmon",
     "puesto":"MP"},
@@ -23,5 +24,5 @@
     "comercial":[
     {"id_empleado":"2",
     "nombre":"Fabiana Martines"}
-    ]
+    ]}
 }
