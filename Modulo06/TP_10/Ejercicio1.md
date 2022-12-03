@@ -1,7 +1,7 @@
- ### Modulo 06 <br/>
- ## ** Ejercicio 1<br/>
+ ## Modulo 06 <br/>
+ # ** Ejercicio 1 **<br/>
  
- # a - Describe dos usos o funciones que proporciona la declaración DOCTYPE en una página web. <br/>
+ ## a - Describe dos usos o funciones que proporciona la declaración DOCTYPE en una página web. <br/>
 
 DOCTYPE indica qué tipo de documento debe abrir el navegador y qué sintaxis y gramática utiliza su código fuente. <br/>
 La tarea de DOCTYPE html es explicar a los programadores y navegadores, a primera vista, de qué Document Type Definition (DTD) se trata y cómo debe renderizarse la web. El DTD indica qué lenguaje de código se utiliza en la página o en el documento HTML. Esto se aplica, por ejemplo, a los archivos HTML, XHTML, SVG, MathML o XML.
@@ -11,7 +11,7 @@ Si la web no tiene la etiqueta DOCTYPE, puede mostrar errores. El motivo es que 
 
 
 
-# b - Para que se utilizan las siguientes etiquetas: <br/>
+## b - Para que se utilizan las siguientes etiquetas: <br/>
 
 - `<head> </head> ` indica la cabecera de la página <br/>
 - `<title> </title> `indica el título <br/>
@@ -33,5 +33,5 @@ Si la web no tiene la etiqueta DOCTYPE, puede mostrar errores. El motivo es que 
 
 
 
-# c- La etiqueta `<script>` puede ir dentro de las etiquetas de `<body>` o `<head>` , hay alguna diferencia donde pueda ir? <br/>
+## c- La etiqueta `<script>` puede ir dentro de las etiquetas de `<body>` o `<head>` , hay alguna diferencia donde pueda ir? <br/>
 Puede ir dentro de cualquiera, generalmente es mejor colocarlo al final del body para que el cargado de la pagina no se detenga para llamar y/o ejecutar el script. Se puede colocar en head pero se ejecutara el scrip antes que cargue cualquier elemento de la pagina.
