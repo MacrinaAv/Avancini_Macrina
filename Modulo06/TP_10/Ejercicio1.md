@@ -1,5 +1,5 @@
  ## Modulo 06 <br/>
- # ** Ejercicio 1 **<br/>
+ #  Ejercicio 1 <br/>
  
  ## a - Describe dos usos o funciones que proporciona la declaración DOCTYPE en una página web. <br/>
 
